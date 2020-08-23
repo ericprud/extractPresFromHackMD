@@ -1,0 +1,26 @@
+# extractPresFromHackMD
+
+extracts &lt;pre/&gt;s from HackMD to a document named either by the preceeding heading or "entry-<N>"
+
+Warning, can spew (but won't trump existing files).
+
+## Invocation
+
+`./extract.js https://hackmd.io/&lt;gibberishName&gt; ...`
+
+or if some docs are locally-saved:
+
+`./extract.js ../Downloads/&lt;gibberishName&gt;.html ...`
+
+## Approach
+
+1. fetch the doc
+2. extract the markdown
+3. convert to HTML
+4. walk with JSDOM
+5. invent names
+6. write
+
+## Todo
+
+Make more efficient by skipping HTML with [remark-parse](https://github.com/remarkjs/remark/tree/main/packages/remark-parse).
